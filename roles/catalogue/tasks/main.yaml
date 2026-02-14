@@ -13,10 +13,6 @@
     name: common
     tasks_from: systemd-setup.yaml
 
-- name: reload the catalogue
-  ansible.builtin.systemd_service:
-  daemon_reload: true
-
 - name: copy mongo repo
   ansible.builtin.copy:
     src: mongo.repo
