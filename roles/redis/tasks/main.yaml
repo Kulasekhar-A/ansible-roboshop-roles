@@ -17,7 +17,7 @@
 
 - name: disable protected mode
   ansible.builtin.lineinfile:
-    path: "/etc/{{ component }}/{{ component }}"
+    path: /etc/{{ component }}/{{ component }}.conf
     line: 'protected-mode no'
 
 - name: start and enable {{ component }}
