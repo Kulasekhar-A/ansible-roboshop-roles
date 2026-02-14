@@ -35,6 +35,10 @@
     src: nginx.conf
     dest: /etc/nginx/nginx.conf
 
+ - name: reload the {{ component }}
+   ansible.builtin.systemd_service:
+    daemon_reload: true
+
  - name: start and enable nginx
    ansible.builtin.service:
     name: nginx
