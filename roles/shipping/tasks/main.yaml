@@ -19,11 +19,11 @@
   chdir: /app 
 
 - name: rename the file
-  ansible.builtin.command: mv target/shipping-1.0.jar shipping.jar 
+  ansible.builtin.command: mv target/{{ component }}-1.0.jar {{ component }}.jar 
   args:
   chdir: /app
 
-- name: import shipping data
+- name: import {{ component }} data
   community.mysql.mysql_db:
     state: import
     name: all
