@@ -39,8 +39,8 @@
    ansible.builtin.systemd_service:
     daemon_reload: true
 
- - name: start and enable {{ component }}
+ - name: start and enable nginx
    ansible.builtin.service:
-    name: "{{ component }}"
+    name: nginx
     enabled: yes
     state: restarted
