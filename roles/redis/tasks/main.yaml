@@ -6,7 +6,7 @@
 
 - name: install {{ component }}
   ansible.builtin.dnf:
-    name: {{ component }}
+    name: "{{ component }}"
     state: present
 
 - name: allow remote connections
