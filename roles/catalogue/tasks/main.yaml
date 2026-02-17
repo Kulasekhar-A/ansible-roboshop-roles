@@ -18,12 +18,12 @@
     src: mongo.repo
     dest: /etc/yum.repos.d/mongo.repo
 
-- name: install  mongodb-mongosh client
+- name: install  mongodb client
   ansible.builtin.dnf:
     name:  mongodb-mongosh
     state: present
 
-- name: check catalogue products loaded
+- name: check {{ component }} products loaded
   ansible.builtin.command: mongosh --host "{{ MONGODB_HOST }}" --quiet --eval 'db.getMongo().getDBNames().indexOf("catalogue")'
   register: catalogue_output
 
@@ -31,13 +31,13 @@
   ansible.builtin.debug:
     msg: "{{ catalogue_output }}"
 
-- name: load the catalogue products
+- name: load the {{ component }} products
   ansible.builtin.shell: mongosh --host "{{ MONGODB_HOST }}" </app/db/master-data.js
   when: catalogue_output.stdout  | int < 0
 
-- name: enabled and start the catalogue
+- name: enabled and start the {{ component }}
   ansible.builtin.service:
-    name: catalogue
+    name: "{{ component }}"
     enabled: yes
     state: restarted
 
