@@ -35,9 +35,9 @@
   ansible.builtin.shell: mongosh --host "{{ MONGODB_HOST }}" </app/db/master-data.js
   when: catalogue_output.stdout  | int < 0
 
-# - name: enabled and start the catalogue
-#   ansible.builtin.service:
-#     name: catalogue
-#     enabled: yes
-#     state: restarted
+- name: enabled and start the catalogue
+  ansible.builtin.service:
+    name: catalogue
+    enabled: yes
+    state: restarted
 
