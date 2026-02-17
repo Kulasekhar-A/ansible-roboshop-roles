@@ -10,5 +10,5 @@
     state: restarted
     
 
-- name: set mysql root password
+- name: set mysql root passwor
   ansible.builtin.command: mysql_secure_installation --set-root-pass "{{ MYSQL_ROOT_PASSWORD }}"
