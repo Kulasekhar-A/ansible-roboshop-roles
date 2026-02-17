@@ -1,4 +1,4 @@
-- name: install maven and sql
+- name: install maven and mysql
   ansible.builtin.dnf:
     name: "{{ item }}"
     state: present
