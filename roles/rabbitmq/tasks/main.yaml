@@ -8,7 +8,7 @@
     name: rabbitmq-server
     state: present
 
-- name: start and enable {{ rabbitmq }}
+- name: start and enable {{ component }}
   ansible.builtin.service:
     name: rabbitmq-server
     state: restarted
