@@ -17,7 +17,7 @@
 - name: create{{ component }}user
   community.rabbitmq.rabbitmq_user:
     user: roboshop 
-    password: roboshop12
+    password: roboshop123
     permissions:
       - vhost: /
         configure_priv: .*
