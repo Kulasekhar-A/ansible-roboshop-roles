@@ -9,6 +9,8 @@
     state: present
 
 - name: start and enable {{ component }}
+  tags:
+  - deployment
   ansible.builtin.service:
     name: rabbitmq-server
     state: restarted
