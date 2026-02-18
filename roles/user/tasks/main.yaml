@@ -1,9 +1,13 @@
 - name: app setup
+  tags:
+  - deployment
   ansible.builtin.import_role:
     name: common
     tasks_from: app-setup.yaml
 
 - name: nodejs setup
+  tags:
+  - deployment
   ansible.builtin.import_role:
     name: common
     tasks_from: nodejs-setup.yaml
@@ -14,6 +18,8 @@
     tasks_from: systemd-setup.yaml
 
 - name: start and enable {{ component }}
+  tags:
+  - deployment
   ansible.builtin.service:
     name: "{{ component }}"
     state: restarted
