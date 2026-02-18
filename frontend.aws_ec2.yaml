@@ -3,9 +3,11 @@ regions:
 - us-east-1
 hostnames:
 - private-ip-address
-keyed_groups:
-- prefix: ""
-  key: catalogue
 filters:
    tag:Name: catalogue-dev
    instance-state-name : running
+compose:
+  ansible_host: private_ip_address
+keyed_groups:
+- separator: ''
+  key: tags.component
