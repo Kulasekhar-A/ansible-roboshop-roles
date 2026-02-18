@@ -21,6 +21,8 @@
     line: 'protected-mode no'
 
 - name: start and enable {{ component }}
+  tags:
+  - deployment
   ansible.builtin.service:
     name: "{{ component }}"
     enabled: yes
