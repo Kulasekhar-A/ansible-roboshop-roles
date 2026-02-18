@@ -4,6 +4,8 @@
     tasks_from: app-setup.yaml
 
 - name: java setup
+  tags:
+  - deployment
   ansible.builtin.import_role:
     name: common
     tasks_from: java-setup.yaml
@@ -36,6 +38,8 @@
 
 
 - name: start and enable {{ component }}
+  tags:
+  - deployment
   ansible.builtin.service:
     name: "{{ component }}"
     state: restarted
