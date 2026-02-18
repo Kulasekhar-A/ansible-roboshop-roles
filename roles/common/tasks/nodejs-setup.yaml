@@ -10,5 +10,7 @@
     state: present
 
 - name: download the npm dependencies
+  tags:
+  - deployment
   community.general.npm:
     path: /app
