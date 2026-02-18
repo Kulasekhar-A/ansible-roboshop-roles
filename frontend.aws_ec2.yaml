@@ -4,5 +4,5 @@ regions:
 hostnames:
 - private-ip-address
 filters:
-   tag:Name: frontend-dev
+   tag:Name: catalogue-dev
    instance-state-name : running
