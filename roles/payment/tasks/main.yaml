@@ -4,6 +4,8 @@
     tasks_from: app-setup.yaml
 
 - name: phyton setup
+  tags:
+  - deployment
   ansible.builtin.import_role:
     name: common
     tasks_from: phyton-setup.yaml
@@ -14,6 +16,8 @@
     tasks_from: systemd-setup.yaml
 
 - name: start and enable {{ component }}
+  tags:
+  - deployment
   ansible.builtin.service:
     name: "{{ component }}"
     enabled: yes
