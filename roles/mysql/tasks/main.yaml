@@ -4,6 +4,8 @@
     state: present
 
 - name: start and enable mysql
+  tags:
+  - deployment
   ansible.builtin.service:
     name: mysqld
     enabled: yes
