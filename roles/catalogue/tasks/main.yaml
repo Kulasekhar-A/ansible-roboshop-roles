@@ -1,9 +1,13 @@
 - name: app setup
+  tags:
+  - deployment
   ansible.builtin.import_role:
     name: common
     tasks_from: app-setup.yaml
 
 - name: nodejs setup
+  tags:
+  - deployment
   ansible.builtin.import_role:
     name: common
     tasks_from: nodejs-setup.yaml
@@ -36,6 +40,8 @@
   when: catalogue_output.stdout  | int < 0
 
 - name: enabled and start the {{ component }}
+  tags:
+  - deployment
   ansible.builtin.service:
     name: "{{ component }}"
     enabled: yes
