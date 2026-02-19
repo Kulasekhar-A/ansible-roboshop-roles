@@ -1,7 +1,3 @@
-#MYSQL_ROOT_PASSWORD: "{{ (lookup('amazon.aws.aws_secret', 'roboshop/dev/mysql_root_password', region='us-east-1') | from_json).MYSQL_ROOT_PASSWORD}}"
-
-#"{{ lookup('amazon.aws.aws_ssm', '/roboshop/dev/mysql_root_password', region='us-east-1', decrypt=True ) }}"
-
 $ANSIBLE_VAULT;1.1;AES256
 38383761393662663232363531633438396538363234303061613231383132653264333063313764
 3238316564393033663761616334626364623364363833360a376639386237383232616631633266
@@ -9,4 +5,11 @@ $ANSIBLE_VAULT;1.1;AES256
 3762343535636563380a663433306437386232336332373662316461376234346662653861386262
 39383938313261323464333335366235643562666563306631363963393165626431626264633936
 3534623736626162383030653366316664303662313636386133
+
+
+
+#MYSQL_ROOT_PASSWORD: "{{ (lookup('amazon.aws.aws_secret', 'roboshop/dev/mysql_root_password', region='us-east-1') | from_json).MYSQL_ROOT_PASSWORD}}"
+
+#"{{ lookup('amazon.aws.aws_ssm', '/roboshop/dev/mysql_root_password', region='us-east-1', decrypt=True ) }}"
+
 
