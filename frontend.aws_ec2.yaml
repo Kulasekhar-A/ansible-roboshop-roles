@@ -7,7 +7,7 @@ filters:
    tag:Name: catalogue-dev
    instance-state-name : running
 compose:
-  ansible_host: private_ip_addres
+  ansible_host: private_ip_address
 keyed_groups:
 - separator: ''
   key: tags.Component
