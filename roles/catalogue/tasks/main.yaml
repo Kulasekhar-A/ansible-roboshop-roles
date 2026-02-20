@@ -33,7 +33,7 @@
 
 - name: print the ec2_output
   ansible.builtin.debug:
-    msg: "{{ catalogue_output }}
+    msg: "{{ catalogue_output }}"
 
 - name: load the {{ component }} products
   ansible.builtin.shell: mongosh --host "{{ MONGODB_HOST }}" </app/db/master-data.js
